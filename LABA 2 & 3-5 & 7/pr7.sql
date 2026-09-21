@@ -26,6 +26,6 @@ SELECT name, publication_year FROM BOOKS ORDER BY name;
 SELECT * FROM distribute WHERE fact_return_date IS NULL ORDER BY plan_return_date;
 
 -- Задание 10 
-SELECT name, publication_year FROM BOOKS ORDER BY publication_year LIMIT 3; -- От старый к новым
+SELECT name, publication_year FROM BOOKS ORDER BY publication_year LIMIT 3; -- От старых к новым
 SELECT name, publication_year FROM BOOKS ORDER BY publication_year DESC LIMIT 3; -- От новых к старым
 SELECT name, publication_year FROM BOOKS ORDER BY name LIMIT 3; -- По алфавиту
