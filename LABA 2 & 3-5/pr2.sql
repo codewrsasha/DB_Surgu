@@ -87,4 +87,13 @@ UPDATE distribute SET fact_return_date = '2026-02-20' WHERE id_distribute = 2;
 INSERT INTO readers (name, number) VALUES
 ('Тестовый читатель', '88888888888');
 
+insert into books (isbn, name, publication_year) values
+(9781234567890, 'Тестовая книга', 2025),
+(9780987654321, 'Другая тестовая книга', 2024);
+
+INSERT INTO distribute (fk_reader, fk_isbn, date_distribute, plan_return_date, fact_return_date) values
+(4, 9781234567890, '2026-02-01', '2026-03-01', NULL),
+(3, 9780987654321, '2026-02-05', '2026-03-05', NULL),
+(1, 9781234567890, '2026-02-10', '2026-03-10', NULL);
+
 DELETE FROM readers WHERE id_reader = 5;
