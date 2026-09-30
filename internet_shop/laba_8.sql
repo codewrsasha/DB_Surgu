@@ -27,15 +27,36 @@ SELECT
 FROM Customers c
 JOIN Orders o ON o.customer_id = c.customer_id
 JOIN Order_Items oi ON oi.order_id = o.order_id
-WHERE Order_Items.product_id = 1;
+WHERE oi.product_id = 1;
 
 -- Задание 5
-
+SELECT
+    product_name
+    price
+FROM products
+WHERE price > (SELECT avg(price) FROM products);
 
 -- Задание 6
-
+SELECT o.order_id, o.order_date
+FROM orders o
+WHERE EXISTS (
+    SELECT *
+    FROM order_items oi
+    WHERE oi.order_id = o.order_id
+      AND oi.price_per_unit > 100000
+);
 
 -- Задание 7
+-- LEFT JOIN
+SELECT 
+    c.full_name
+FROM customers c
+LEFT JOIN orders o ON c.customer_id = o.customer_id
+LEFT JOIN order_items oi ON o.order_id = oi.order_id
+LEFT JOIN products p ON oi.product_id = p.product_id AND p.product_name = 'Ноутбук'
+WHERE p.product_id IS NULL;
+
+-- NOT IN
 
 
 -- Задание 8
