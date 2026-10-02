@@ -89,7 +89,7 @@ FULL OUTER JOIN products p ON oi.product_id = p.product_id;
 
 -- Задание 10
 -- C JOIN
-SELECT DISTINCT 
+SELECT 
     c.full_name,
     p.product_name,
     oi.quantity
